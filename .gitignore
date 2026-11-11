@@ -1,0 +1,5 @@
+image_processing
+data/input/*.ppm
+data/output/*.pgm
+artifacts/*
+!artifacts/.gitkeep

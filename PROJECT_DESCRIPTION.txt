@@ -1,0 +1,11 @@
+Project Title: GPU-Accelerated Image Processing Using CUDA
+
+This project demonstrates batch image processing using NVIDIA CUDA. It uses a collection of 200 synthetic RGB images and processes them on the GPU. A custom CUDA kernel converts each image from RGB to grayscale and applies the Sobel edge-detection operator to highlight image boundaries.
+
+I selected this project because image processing is a practical example of data-parallel computing. Each output pixel can be calculated independently, which makes the workload suitable for execution by many GPU threads. The program uses CUDA memory allocation and host-to-device/device-to-host transfers, launches a two-dimensional grid of CUDA threads, and reports the processing time.
+
+The output consists of a grayscale image and an edge-detected image for every input image. The project also includes a Python script to generate a repeatable dataset, a Makefile to compile the CUDA source, and command-line options to select input and output directories and limit the number of images.
+
+During development, important considerations included handling image boundaries in the Sobel operator, checking CUDA API calls, and ensuring that the program processes a batch rather than only one image. The measured time includes GPU data transfers and kernel execution, so it provides a useful view of the complete GPU processing pipeline.
+
+After running the program in the CUDA-enabled course lab, I will compare the generated outputs and include the actual terminal log and screenshots as proof of execution. This project helped me understand how a pixel-based workload can be divided across CUDA threads and how GPU memory transfers affect an end-to-end application.
